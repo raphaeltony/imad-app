@@ -68,11 +68,8 @@ var htmlTemplate `
             </div>
         </div>
     </body>
-        
-    
     
 </html>
-
 `;
 return htmlTemplate;
 }

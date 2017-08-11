@@ -6,30 +6,52 @@ var app = express();
 app.use(morgan('combined'));
 
 
-
-var articleOne = {
-    
-    title : 'Article One by Ralph',
-    heading : 'Article One',
-    date : '11 Aug 2017',
-    content : `
-                <p>
-                    This is my first paragraph.Yada yadaYada yadaYada yadaYada yadaYada yadaYada yadaYada yadaYada yadaYada yadaYada yadaYada yadaYada yada
-                    Yada yada
-                    yada
-                </p>
-                
-                <p>
-                    This is my second paragraph
-                    Bleh bleh
-                    bleh
-                </p>
-                
-                <p>
-                    This is my third paragraph
-                    I dont know any other word
-                </p>`
-    
+var articles = {
+    'article1' : {
+        title : 'Article One by Ralph',
+        heading : 'Article One',
+        date : '11 Aug 2017',
+        content : `
+                    <p>
+                        This is my first paragraph.Yada yadaYada yadaYada yadaYada yadaYada yadaYada yadaYada yadaYada yadaYada yadaYada yadaYada yadaYada yada
+                        Yada yada
+                        yada
+                    </p>
+                    
+                    <p>
+                        This is my second paragraph
+                        Bleh bleh
+                        bleh
+                    </p>
+                    
+                    <p>
+                        This is my third paragraph
+                        I dont know any other word
+                    </p>`},
+    'article2' : {
+        title : 'Article Two by Ralph',
+        heading : 'Article Two',
+        date : '11 Aug 2017',
+        content : `
+                    <p>
+                        This is my second paragraph
+                        Bleh bleh
+                        bleh
+                    </p>
+                    
+                    <p>
+                        This is my third paragraph
+                        I dont know any other word
+                    </p>`},
+    'article3' : {
+        title : 'Article Three by Ralph',
+        heading : 'Article Three',
+        date : '11 Aug 2017',
+        content : `
+                    <p>
+                        This is my third paragraph
+                        I dont know any other word
+                    </p>`}
 };
 
 function createTemplate(data){
@@ -88,8 +110,8 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
-app.get('/article1',function (req,res){
-    res.send(createTemplate(articleOne));
+app.get('/:articleName',function (req,res){
+    res.send(createTemplate(articles[articleName]));
 });
 app.get('/article2',function (req,res){
     res.sendFile(path.join(__dirname, 'ui', 'article2.html'));

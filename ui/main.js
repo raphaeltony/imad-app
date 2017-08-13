@@ -24,7 +24,7 @@ var request = new XMLHttpRequest();
 
 //Capture the response:
 request.onreadystatechange = function(){    //if request changed :
-    if(request.readyState == XMLHttpResponse.DONE){
+    if(request.readyState == XMLHttpRequest.DONE){
         if(request.status == 200){ //If request was successful
            var counter = request.responseText; 
            var span = document.getElementById('count');

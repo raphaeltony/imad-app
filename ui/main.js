@@ -40,6 +40,26 @@ request.send(null);
     
 };
 
+////////////////////////////////////////////////////////////////////////////////
+//Submit Name
+var nameInput = document.getElementById('name');
+var name = nameInput.value;
+var submit = document.getElementById('submit_btn');
+
+submit.onclick = function(){
+    //Make request to server and send name
+    
+    //Capture a list of names and render it as a list
+    var names = ['name1','name2','name3'];
+    var list = '';
+    for(var i=0;i<names.length;i++){
+        list += '<li>'+names[i]+'</p>';
+    }
+    var ul = document.getElementById('name_list');
+    ul.innerHTML = list;
+    
+};
+
 
 
 

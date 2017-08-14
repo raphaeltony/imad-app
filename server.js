@@ -120,11 +120,6 @@ app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
 
-app.get('/:articleName',function (req,res){
-    var articleName = req.params.articleName;
-    res.send(createTemplate(articles[articleName]));
-});
-
 var names = [];
 app.get('/submit-name',function(req,res){ //using query : /submit-name?name=raph
     var name = req.query.name; //Get name from request. Can also use - req.params.name;
@@ -134,6 +129,12 @@ app.get('/submit-name',function(req,res){ //using query : /submit-name?name=raph
     res.send(JSON.stringify(names));
     
 });
+
+app.get('/:articleName',function (req,res){
+    var articleName = req.params.articleName;
+    res.send(createTemplate(articles[articleName]));
+});
+
 
 
 

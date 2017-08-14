@@ -48,15 +48,28 @@ var submit = document.getElementById('submit_btn');
 
 submit.onclick = function(){
     //Make request to server and send name
-    
-    //Capture a list of names and render it as a list
-    var names = ['name1','name2','name3'];
-    var list = '';
-    for(var i=0;i<names.length;i++){
-        list += '<li>'+names[i]+'</p>';
-    }
-    var ul = document.getElementById('name_list');
-    ul.innerHTML = list;
+    var request = new XMLHttpRequest();
+
+    //Capture the response:
+    request.onreadystatechange = function(){    //if request changed :
+        if(request.readyState == XMLHttpRequest.DONE){
+            if(request.status == 200){ //If request was successful
+            //Capture a list of names and render it as a list
+                var names = request.responeText;
+                names = JSON.parse(names);
+                var list = '';
+                for(var i=0;i<names.length;i++){
+                    list += '<li>'+names[i]+'</p>';
+                }
+        var ul = document.getElementById('name_list');
+        ul.innerHTML = list;
+            }
+        }
+    };
+
+//Make and send the request:
+request.open('GET','http://prince4raphael.imad.hasura-app.io/submit-name'+name,true);
+request.send(null);
     
 };
 

@@ -69,7 +69,7 @@ submit.onclick = function(){
 
 //Make and send the request:
 request.open('GET','http://prince4raphael.imad.hasura-app.io/submit-name'+name,true);
-request.send(null);
+request.send(name);
     
 };
 

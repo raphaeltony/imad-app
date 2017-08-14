@@ -126,8 +126,8 @@ app.get('/:articleName',function (req,res){
 });
 
 var names = [];
-app.get('/submit-name/:name',function(req,res){
-    var name = req.params.name; //Get name from request
+app.get('/submit-name',function(req,res){ //using query : /submit-name?name=raph
+    var name = req.query.name; //Get name from request. Can also use - req.params.name;
     names.push(name);
     //JSON - Javascript Object Notation
     //Helps converts js objects into strings

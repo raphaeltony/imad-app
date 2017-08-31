@@ -95,7 +95,7 @@ login.onclick = function(){
                 }
             }
         }
-    }
+    
 
 //Make and send the request:
 var username = document.getElementById('username').value;

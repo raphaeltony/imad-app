@@ -87,8 +87,11 @@ login.onclick = function(){
                 console.log("user logged in!");
                 alert('Logged in successfully !');
                 }
-                else(request.status===403){
+                else if(request.status===403){
                     alert("Invalid username/password");
+                }
+                else if(request.status===500){
+                    alert("Something went wrong on the server");
                 }
             }
         }

@@ -84,12 +84,15 @@ login.onclick = function(){
     request.onreadystatechange = function(){    //if request changed :
         if(request.readyState == XMLHttpRequest.DONE){
             if(request.status == 200){ //If request was successful
-                console.log("user logged in!")
-                alert('Logged in successfully !')
+                console.log("user logged in!");
+                alert('Logged in successfully !');
+                }
+                else(request.status===403){
+                    alert("Invalid username/password");
                 }
             }
         }
-    };
+    }
 
 //Make and send the request:
 var username = document.getElementById('username').value;

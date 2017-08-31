@@ -3,10 +3,15 @@ var morgan = require('morgan');
 var path = require('path');
 var crypto = require('crypto');
 var bodyParser = require('body-parser');
+var session = require('express-session');
 
 var app = express();
 app.use(morgan('combined'));
 app.use(bodyParser.json())
+app.use(session({
+    secret : 'someRandomSecret',
+    cookie : {maxAge : 1000*60*60*24*30} //for a month
+}))
 
 var Pool = require('pg').Pool;
 var config = {
@@ -164,7 +169,9 @@ app.post('/login',function(req,res){
                 var hashedPassword = hash(password,salt);
                 
                 if(hashedPassword===dbString){
-                    //setup session
+                    //creating a session
+                    req.session.auth = {userId:result.rows[0].id};
+                    
                     res.send('credentials correct !');
                 }else{
                     res.send(403).send("Invalid username/password");
@@ -174,6 +181,13 @@ app.post('/login',function(req,res){
         }
    });
 });
+app.get('check-login',function(req,res){
+    if(req.session && req.session.auth && req.session.auth.userId){
+        res.send("You are logged in as : "+ req.session.auth.userId.toString());
+    }else{
+        res.send("You are not logged in!")
+    }
+})
 
 
 

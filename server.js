@@ -174,7 +174,7 @@ app.post('/login',function(req,res){
                     
                     res.send('credentials correct !');
                 }else{
-                    res.send(403).send("Invalid username/password");
+                    res.send(403).send(JSON.stringify({error:"Invalid username/password"}));
                 }
             }
             

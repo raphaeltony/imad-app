@@ -171,8 +171,8 @@ app.post('/login',function(req,res){
                 if(hashedPassword===dbString){
                     //creating a session
                     req.session.auth = {userId:result.rows[0].id};
-                    
-                    res.send('credentials correct !');
+                    res.writeHead(200,{'Content-Type':'application/json'})
+                    res.send(JSON.stringify({message:'credentials correct !'}));
                 }else{
                     res.send(403).send(JSON.stringify({error:"Invalid username/password"}));
                 }

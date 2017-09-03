@@ -158,10 +158,10 @@ app.post('/login',function(req,res){
    
    pool.query('SELECT * FROM "users" WHERE username=$1',[username],function(err,result){
        if(err){
-            res.status(500).send(err.toString());
+            res.status(500).send(JSON.stringify({error:err.toString()}));
         }else{
             if(result.rows.length===0){
-                res.send(403).send("Invalid username/password");
+                res.send(403).send(JSON.stringify({error:"Invalid username/password"}));
             }else{
                 //match the password
                 var dbString = result.rows[0].password;
@@ -171,7 +171,6 @@ app.post('/login',function(req,res){
                 if(hashedPassword===dbString){
                     //creating a session
                     req.session.auth = {userId:result.rows[0].id};
-                    //res.setRequestHeader('Content-Type','application/json');
                     res.send(JSON.stringify({message:'credentials correct !'}));
                 }else{
                     res.send(403).send(JSON.stringify({error:"Invalid username/password"}));

@@ -1,20 +1,102 @@
 <!doctype html>
-<html>
+
     <head>
-        <link href="/ui/style.css" rel="stylesheet" />
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <!--        <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">-->
+
+        <!--Theme custom css -->
+        <link rel="stylesheet" href="assets/css/style.css">
+
+
+
     </head>
     <body>
-        <div class="container">
-            <div class="center">
-                <img id="madi" src="http://gallery.yopriceville.com/var/albums/Free-Clipart-Pictures/Grass-Grounds-Coverings-PNG-Clipart/Sea_Wave_PNG_Clipart.png?" class="img-medium"/>
-            </div>
-            <h3>PERSONAL</h3>
-            <div>I'm Raphael Tony</div>
-            <hr/>
-            <h4>PROFESSIONAL</h4>
-    	    <div>I study at The Choice School</div>
-    	    <hr/>
-    	    <div class = "footer">
+
+        <!--Home page style-->
+        <header id="home" class="home home-main-content">
+			
+			<div class="container">
+				<div class="row">
+				
+					<div class="div-menu">
+						<header class="cd-header">
+						</header>
+					</div>
+				
+					<div class="home-wrapper">
+						<div class="col-sm-6 col-xs-12">
+							<div class="home-content">
+								<h1>Hey There !<h1>
+								<hr>
+								<h8>I'm <strong> Raphael Tony </strong></h8> 
+								<hr>
+								<h9>Nice to meet you!</h9>
+								<hr>
+								<p>I'm 16 and I love computers. I have learnt many programming languages like Java, C++, C#, Python, SQL etc. Currently I'm studying in The Choice School.</p>
+							</div>
+						</div>
+							
+						<div class="col-sm-6 col-xs-12">
+							<div class="home-photo">
+								<img src="assets/images/new.jpg"  />
+							</div>
+						</div>
+							
+					</div>
+				</div>
+			</div>
+			
+        </header>
+
+        <!-- Sections -->
+        <section id="about" class="about sections">
+            <div class="container">
+                <!-- Example row of columns -->
+				<div class="heading-content text-center">
+					<h3>About Me</h3>
+					<img src="assets/images/separator.png" alt="Separator" />
+				</div>
+                <div class="row">
+                    <div class="about-wrapper">
+					
+                    	<div class="col-sm-4 col-xs-12">
+                    		<div class="about-content">
+                    			<h5>Personal<span><i class="fa fa-long-arrow-right"></i></span></h5>
+                    			<p>I live in Kerala, India. I study at The Choice School. Currently I'm studying in class 11. I have opted for the computer science stream.
+									I love learning new things and I play all kinds of sport</p>
+                    		</div>
+                    	</div>
+						
+						<div class="col-sm-4 col-xs-12">
+                    		<div class="about-content">
+                    			<h5>Interesting Stuff<span><i class="fa fa-long-arrow-right"></i></span></h5>
+                    			<p>I started learning Java during the vacation of 2016. I went on to develop an Election Software for my school Student Council. 
+								Then I got interested in Robotics and participated in many robotics events. I participated in <strong style="color:black">Shaastra 2017</strong> conducted in IIT Madras and won 1st place for the Roboceana challenge.								
+								</p>
+                    		</div>
+                    	</div>
+						
+						<div class="col-sm-4 col-xs-12">
+                    		<div class="about-content">
+                    			<h5>IMAD<span><i class="fa fa-long-arrow-right"></i></span></h5>
+                    			<p>It was one of my aunts who sent me the link to the IMAD website. So far I've enjoyed the experiance as I love learning new things
+								. And the concepts taught in this course are so cool ! Sometimes they are a little vague. But I google and try my best to understand.
+								I would like to thank the team behind this idea and encourage them to conduct more courses.</p>
+                    		</div>
+                    	</div>
+						
+                    </div>
+                </div>
+				
+			<div class="container">
+			<h10>IMAD Exercises :</h10>
+			<hr>
+    	    <div>
     	        This button <button id="counter">CLICK ME !</button>  has been clicked <span id="count">0</span> times !
     	        <hr/>
     	        <br/>
@@ -34,8 +116,33 @@
     	    </div>
 
         </div>
+		<script type="text/javascript" src="assets/main.js"</script>
+		
+            </div> <!-- /container -->       
+        </section>
 
-        <script type="text/javascript" src="/ui/main.js">
-        </script>
+        </section><!-- End of portfolio two Section -->
+	
+        <!--Footer-->
+        <footer id="footer" class="footer">
+            <div class="container">
+            	<div class="row">
+            		<div class="wrapper">
+            			<div class="col-sm-6 col-sm-offset-3 col-xs-12">
+            				<div class="footer-item text-center">
+								
+								<div class="copyright">
+									<p>PS. I didn't make this website. It was a template that I downloaded from 'www.free-css.com'</p>
+									<p>Made with <i class="fa fa-heart"></i> by <a target="_blank" href="http://bootstrapthemes.co"> Bootstrap Themes </a>2016. All rights reserved.</p>
+								</div>
+								
+							</div>
+            			</div>
+            		</div>
+            	</div>
+            </div>
+        </footer>
+
+
     </body>
 </html>

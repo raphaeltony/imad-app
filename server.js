@@ -117,7 +117,7 @@ app.get('/assets/images/separator.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui','assets','images','separator.png'));
 });
 
-app.get('/assets/fonts/:font', function (req, res) {
+app.get('/ui/assets/fonts/:font', function (req, res) {
     var font = req.params.font;
   res.sendFile(path.join(__dirname, 'ui','assets','fonts',font.toString()));
 });

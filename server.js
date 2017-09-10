@@ -113,8 +113,8 @@ app.get('/assets/images/new.jpg', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui','assets','images','new.jpg'));
 });
 
-app.get('/assets/images/seperator.png', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui','assets','images','seperator.png'));
+app.get('/assets/images/separator.png', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui','assets','images','separator.png'));
 });
 
 app.get('/assets/fonts/:font', function (req, res) {

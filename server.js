@@ -105,6 +105,18 @@ app.get('/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui','main.js'));
 });
 
+app.get('/assets/css/bootstrap.min.css', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui','assets','css','bootstrap.min.css'));
+});
+
+app.get('/assets/images/new.jpg', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui','assets','images','new.jpg'));
+});
+
+app.get('/assets/images/seperator.png', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui','assets','images','seperator.png'));
+});
+
 //Getting Articles
 app.get('/articles/:articleName',function (req,res){
     var articleName = req.params.articleName;

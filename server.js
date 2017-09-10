@@ -101,6 +101,7 @@ app.get('/style.css', function (req, res) {
 });
 
 app.get('/main.js', function (req, res) {
+    console.log(__dirname);
   res.sendFile(path.join(__dirname,'main.js'));
 });
 

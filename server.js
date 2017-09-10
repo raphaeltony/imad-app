@@ -97,12 +97,12 @@ app.get('/counter', function (req,res) {
 });
 
 app.get('/style.css', function (req, res) {
-  res.sendFile(path.join(__dirname,'style.css'));
+  res.sendFile(path.join(__dirname, 'ui','style.css'));
 });
 
 app.get('/main.js', function (req, res) {
     console.log(__dirname);
-  res.sendFile(path.join(__dirname,'main.js'));
+  res.sendFile(path.join(__dirname, 'ui','main.js'));
 });
 
 //Getting Articles
